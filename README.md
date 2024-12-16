@@ -88,7 +88,7 @@ Visualization results:
 
 ## Reproduce
 
-以下是3D语义分割结果比较：![3D语义分割比较](/Users/guhaoyi/Codes/Online3D/Online3D/images/result1.png)
+以下是3D语义分割结果比较：![3D语义分割比较](./images/result1.png)
 
 ## Tips
 
