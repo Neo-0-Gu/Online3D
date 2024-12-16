@@ -90,6 +90,8 @@ Visualization results:
 
 以下是3D语义分割结果比较：![3D语义分割比较](./images/result1.png)
 
+下表是3D目标检测和实例分割结果比较：![3D目标检测和实例分割结果比较](./images/result2.png)
+
 ## Tips
 
 如果你的 GPU 资源有限，可以考虑以下措施：
