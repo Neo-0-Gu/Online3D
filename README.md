@@ -88,7 +88,7 @@ Visualization results:
 
 ## Reproduce
 
-以下是3D语义分割结果比较：![3D语义分割比较](./images/result1.png)
+下表是3D语义分割结果比较：![3D语义分割比较](./images/result1.png)
 
 下表是3D目标检测和实例分割结果比较:![result2](./images/result2.png)
 
