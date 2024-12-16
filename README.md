@@ -12,8 +12,6 @@
 
 原论文提出了一种模型与任务无关的即插即用模块，可将离线的3D场景感知模型（以重建的点云作为输入）转换为在线感知模型（以流式RGB-D视频作为输入）。
 
----
-
 ## Method
 
 整个方法流程见下图:
@@ -39,7 +37,7 @@ model = dict(
 
 
 ## Main Results
-We provide the checkpoints for quick reproduction of the results reported in the paper. 
+以下是原项目结果：
 
 3D semantic segmentation on ScanNet and SceneNN:
 
@@ -88,10 +86,18 @@ Visualization results:
 
 ![vis](./images/vis.png)
 
+## Reproduce
+
+以下是3D语义分割结果比较：![3D语义分割比较](/Users/guhaoyi/Codes/Online3D/Online3D/images/result1.png)
+
 ## Tips
-If your GPU resources are limited, consider:
-- Remove 2D modality (img_memory or the whole img_backbone). Note that in our 3D instance segmentation experiments, we remove img_memory to avoid OOM.
-- Only insert adapters after high-level backbone features. We observe the higher the level, the better the performance of adapter, and the lower the resolution, the smaller the computation. For example, change:
+
+如果你的 GPU 资源有限，可以考虑以下措施：
+
+- 移除 2D 模态（img_memory 或整个 img_backbone）。需要注意的是，在我们的 3D 实例分割实验中，我们移除了 img_memory 来避免出现 OOM（显存不足）的情况。
+
+- 仅在高层主干网络特征之后插入适配器。我们观察到，特征层级越高，适配器的性能越好，同时分辨率越低，计算量也越小。例如，可以更改如下内容：
+
 ```python
 img_memory=dict(type='MultilevelImgMemory', ada_layer=(0,1,2,3))
 memory=dict(type='MultilevelMemory', vmp_layer=(0,1,2,3)),
@@ -101,11 +107,7 @@ memory=dict(type='MultilevelMemory', vmp_layer=(0,1,2,3)),
 img_memory=dict(type='MultilevelImgMemory', ada_layer=(2,3))
 memory=dict(type='MultilevelMemory', vmp_layer=(2,3)),
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then image and point cloud adapters will be only inserted after the highest two levels of features (for a four-level backbone).
-
-
-## Acknowledgement
-We thank a lot for the flexible codebase of [FCAF3D](https://github.com/SamsungLabs/fcaf3d) and valuable datasets provided by [ScanNet](https://github.com/ScanNet/ScanNet) and [SceneNN](https://github.com/hkust-vgd/scenenn).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后，图像和点云适配器将仅插入到最高两个特征层级之后（针对四层主干网络）。
 
 
 ## Bibtex
