@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repo contains PyTorch implementation for paper [Memory-based Adapters for Online 3D Scene Perception](https://arxiv.org/abs/2403.06974) based on [MMDetection3D](https://github.com/open-mmlab/mmdetection3d). Look here for [中文解读](https://zhuanlan.zhihu.com/p/704435537).
+这个仓库包含了基于 [MMDetection3D](https://github.com/open-mmlab/mmdetection3d)的 [Memory-based Adapters for Online 3D Scene Perception](https://arxiv.org/abs/2403.06974) pytorch实现. 原论文的 [中文解读](https://zhuanlan.zhihu.com/p/704435537)可通过链接访问。
 
 > Memory-based Adapters for Online 3D Scene Perception  
 > [Xiuwei Xu](https://xuxw98.github.io/)*, Chong Xia\*, [Ziwei Wang](https://ziweiwangthu.github.io/), [Linqing Zhao](https://scholar.google.com/citations?user=ypxt5UEAAAAJ&hl=zh-CN&oi=ao), [Yueqi Duan](https://duanyueqi.github.io/), [Jie Zhou](https://scholar.google.com/citations?user=6a79aPwAAAAJ&hl=en&authuser=1), [Jiwen Lu](http://ivg.au.tsinghua.edu.cn/Jiwen_Lu/)
@@ -10,18 +10,17 @@ This repo contains PyTorch implementation for paper [Memory-based Adapters for O
 
 ![teaser](./images/teaser2.png)
 
-We propose a model and task-agnostic plug-and-play module, which converts offline 3D scene perception models (receive reconstructed point clouds) to online perception models (receive streaming RGB-D videos).
+原论文提出了一种模型与任务无关的即插即用模块，可将离线的3D场景感知模型（以重建的点云作为输入）转换为在线感知模型（以流式RGB-D视频作为输入）。
 
-## News
-- [2023/3/07]: Code released. Paper will be uploaded to Arxiv in next week.
-- [2023/2/27]: Our paper is accepted by CVPR 2024.
+---
 
 ## Method
-Overall pipeline of our work:
+
+整个方法流程见下图:
 
 ![overview](./images/over-arch.png)
 
-Memory-based adapters can be easily inserted into existing architecture by a few lines in config:
+基于内存的适配器可以通过在配置文件中添加几行代码轻松插入到现有架构中：
 ```python
 model = dict(
     type='SingleViewModel',
@@ -31,11 +30,11 @@ model = dict(
 ```
 
 ## Getting Started
-For data preparation and environment setup:
+数据预处理和环境配置按照以下教程:
 - [Installation](docs/install.md) 
 - [Prepare Dataset](docs/data.md)
 
-For training，evaluation and visualization:
+训练，评估和微调
 - [Train, Evaluation and Visualization](docs/run.md)
 
 
