@@ -35,7 +35,7 @@ std::vector<at::Tensor> three_nn(at::Tensor unknowns, at::Tensor knows) {
                             unknowns.data<float>(), knows.data<float>(),
                             dist2.data<float>(), idx.data<int>());
   } else {
-    AT_ASSERT(false, "CPU not supported");
+    TORCH_INTERNAL_ASSERT(false, "CPU not supported");
   }
 
   return {dist2, idx};
@@ -65,7 +65,7 @@ at::Tensor three_interpolate(at::Tensor points, at::Tensor idx,
         points.data<float>(), idx.data<int>(), weight.data<float>(),
         output.data<float>());
   } else {
-    AT_ASSERT(false, "CPU not supported");
+    TORCH_INTERNAL_ASSERT(false, "CPU not supported");
   }
 
   return output;
@@ -94,7 +94,7 @@ at::Tensor three_interpolate_grad(at::Tensor grad_out, at::Tensor idx,
         grad_out.data<float>(), idx.data<int>(), weight.data<float>(),
         output.data<float>());
   } else {
-    AT_ASSERT(false, "CPU not supported");
+    TORCH_INTERNAL_ASSERT(false, "CPU not supported");
   }
 
   return output;
