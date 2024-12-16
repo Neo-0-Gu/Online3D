@@ -88,9 +88,13 @@ Visualization results:
 
 ## Reproduce
 
-下表是对于3D语义分割任务，原项目和复现结果比较：![3D语义分割比较](./images/result1.png)
+下表是对于3D语义分割任务，原项目和复现结果比较：
 
-下表是对于3D目标检测和实例分割任务，原项目和复现结果比较:![result2](./images/result2.png)
+![3D语义分割比较](./images/result1.png)
+
+下表是对于3D目标检测和实例分割任务，原项目和复现结果比较:
+
+![result2](./images/result2.png)
 
 ## Tips
 
